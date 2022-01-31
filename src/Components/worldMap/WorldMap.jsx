@@ -4,14 +4,10 @@ import './worldMap.style.css';
 const WorldMap = ({ onClick }) => (
   <svg
     baseProfile="tiny"
-    height="857"
-    stroke="black"
     strokeLinecap="round"
     strokeLinejoin="round"
-    strokeWidth=".2"
     version="1.2"
-    viewBox="0 0 2000 857"
-    width="2000"
+    viewBox="0 0 2000 1000"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -660,8 +656,7 @@ const WorldMap = ({ onClick }) => (
     <path
       onClick={(e) => onClick(e)}
       d="M1179.1 288.2l0.4 2.6-0.6 1 0.1 0-0.7 2-2.1-0.8-0.7 4.2 1.5 0.7-1.3 0.9-0.1 1.7 2.5-0.8 0.4 2.5-1.8 10.2-0.7-1.6-3.9-9.4 1.4-2.1-0.4-0.4 1.1-3 0.6-4.8 0.6-1.7 0.1 0 1.8 0 0.4-1.1 1.4-0.1z"
-      id="IL"
-      name="Israel"
+      name="palestine"
     />
     <path
       onClick={(e) => onClick(e)}
