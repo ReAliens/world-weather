@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@chakra-ui/react';
+import { useState } from 'react';
+import WorldMap from './Components/worldMap/WorldMap';
 
 function App() {
+  const [loc, setLoc] = useState('');
+  console.log(loc);
+
+  const handleLocation = (e) => {
+    setLoc(
+      e.target.getAttribute('name')
+        ? e.target.getAttribute('name')
+        : e.target.className.baseVal,
+    );
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box w="100%" height="100vh" bgColor="#01171b">
+      <WorldMap onClick={handleLocation} />
+    </Box>
   );
 }
 
