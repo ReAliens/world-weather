@@ -7,7 +7,7 @@ const AppRoutes = () => (
   <Suspense>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/:countrey" element={<Countrey />} />
+      <Route path="/:country" element={<Countrey />} />
     </Routes>
   </Suspense>
 );

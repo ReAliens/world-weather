@@ -8,9 +8,10 @@ const Header = () => (
     height="80px"
     width="100%"
     alignItems="center"
-    bgColor="red.600"
+    bgColor="orange.400"
     pos="sticky"
     top="0"
+    zIndex="3"
   >
     <AngleLeftIcon boxSize="30px" color="white" />
     <Text textAlign="center">World Weather</Text>

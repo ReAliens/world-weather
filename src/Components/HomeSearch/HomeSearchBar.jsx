@@ -8,10 +8,10 @@ import {
 import { SearchIcon } from '../../assets/Icon';
 
 const SearchBar = () => (
-  <Flex width="100%" bgColor="red.600" margin="auto" py="20px" justifyContent="center">
+  <Flex width="100%" bgColor="orange.400" margin="auto" py="20px" justifyContent="center">
     <InputGroup w="50%">
       <Input bgColor="white" placeholder="Search" />
-      <InputRightAddon bgColor="red.600" children={<SearchIcon />} />
+      <InputRightAddon bgColor="orange.400" children={<SearchIcon />} cursor="pointer" />
     </InputGroup>
   </Flex>
 );
