@@ -8,13 +8,13 @@ const Header = () => (
     height="80px"
     width="100%"
     alignItems="center"
-    bgColor="orange.400"
+    bgColor="blue.400"
     pos="sticky"
     top="0"
     zIndex="3"
   >
     <AngleLeftIcon boxSize="30px" color="white" />
-    <Text textAlign="center">World Weather</Text>
+    <Text textAlign="center" color="white">World Weather</Text>
     <Flex alignItems="center" justifyContent="flex-end" width="100%">
       <MicCircleIcon boxSize="50px" mr={['0px', '10px', '10px', '10px']} />
       <GearIcon boxSize="30px" ml={['0px', '10px', '10px', '10px']} />

@@ -20,11 +20,11 @@ export const citiesFetchError = (payload) => ({
   payload,
 });
 
-export const fetchCities = (code) => async (dispatch) => {
+export const fetchCities = () => async (dispatch) => {
   dispatch(citiesFetchStart());
   try {
     const response = await fetch(
-      `https://restcountries.com/v3.1/alpha/${code}`,
+      'https://countriesnow.space/api/v0.1/countries/states',
     );
     if (response.ok) {
       const cities = await response.json();

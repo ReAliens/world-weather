@@ -11,15 +11,10 @@ const Home = () => {
 
   console.log(loc);
   const handleLocation = (e) => {
-    console.log(e);
-    setLoc(
-      e.getAttribute('name')
-        ? e.getAttribute('name')
-        : e.target.className.baseVal,
-    );
+    setLoc(e.target.value !== '' ? e.target.value : e.target.className.baseVal);
   };
   return (
-    <Box width="100%" bgColor="black" py="20px">
+    <Box width="100%" py="20px">
       <Box p="50px">
         <WorldMap onClick={(e) => handleLocation(e)} />
       </Box>
