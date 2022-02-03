@@ -23,7 +23,35 @@ export const countriesFetchError = (payload) => ({
 export const fetchCountries = () => async (dispatch) => {
   dispatch(countriesFetchStart());
   try {
-    const response = await fetch('https://restcountries.com/v3.1/all');
+    const response = await fetch('https://api.geographql.renzooo.com/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'reload',
+      body: JSON.stringify({
+        query: `query {
+          countries(page: { first: 250 }) {
+            totalCount
+            edges {
+              cursor
+              node {
+                id
+                name
+                emoji
+                iso2
+                iso3
+                capital
+                region
+                phone_code
+                numeric_code
+                timezones {
+                  gmt_offset_name
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
     if (response.ok) {
       const countries = await response.json();
       dispatch(countriesFetchDone(countries));

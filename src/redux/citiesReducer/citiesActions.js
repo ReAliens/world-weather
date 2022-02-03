@@ -20,12 +20,41 @@ export const citiesFetchError = (payload) => ({
   payload,
 });
 
-export const fetchCities = () => async (dispatch) => {
+export const fetchCities = (variables) => async (dispatch) => {
   dispatch(citiesFetchStart());
   try {
-    const response = await fetch(
-      'https://countriesnow.space/api/v0.1/countries/states',
-    );
+    const response = await fetch('https://api.geographql.renzooo.com/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'reload',
+      body: JSON.stringify({
+        query: `query($id: Int) {
+          country(id: $id) {
+            name
+            iso2
+            capital
+            emoji
+            longitude
+            latitude
+            native
+            currency
+            region
+            subregion
+            currency_symbol
+            states (page:{first:100}){
+              edges {
+                node {
+                  name
+                  latitude
+                  longitude
+                }
+              }
+            }
+          }
+        }`,
+        variables: { id: variables },
+      }),
+    });
     if (response.ok) {
       const cities = await response.json();
       dispatch(citiesFetchDone(cities));

@@ -6,23 +6,24 @@ import {
   AccordionPanel,
   Box,
 } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { fetchCities } from '../../redux/citiesReducer/citiesActions';
 
 const Countrey = () => {
+  const dispatch = useDispatch();
   const { country } = useParams();
-  const { cities, countries } = useSelector((state) => state);
-  const selectedCountryStates = cities?.cities?.data?.find(
-    (item) => item.iso2 === country,
-  );
-  const countryData = countries?.countries?.find(
-    (item) => item?.cca2 === country,
-  );
-  console.log(selectedCountryStates, countryData);
+  useEffect(() => {
+    dispatch(fetchCities(Number(country)));
+  }, []);
+  const { cities } = useSelector((state) => state);
+  const mohsen = cities?.cities?.data?.country?.states?.edges;
+
   return (
     <Box width="100%" height="100vh" color="white">
-      <Accordion allowMultiple>
-        {selectedCountryStates?.states?.map((state) => (
+      <Accordion>
+        {mohsen?.map((state) => (
           <AccordionItem key={state?.state_code} bgColor="gray.700">
             <h2>
               <AccordionButton>

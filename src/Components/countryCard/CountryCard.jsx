@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ const CountryCard = ({
         <Text as="span" fontSize="14px">
           {country}
         </Text>
-        <Image src={flag} alt="Flag" height="25px" width="50px" />
+        {flag}
       </Flex>
       <Flex
         justifyContent="space-between"
@@ -35,7 +35,7 @@ const CountryCard = ({
         <Text as="span" fontSize="12px">
           {capital}
         </Text>
-        <Text as="span" fontSize="12px">
+        <Text as="span" fontSize="12px" justifyContent="center">
           {timeZone}
         </Text>
         <Text as="span" fontSize="12px">
@@ -49,14 +49,10 @@ const CountryCard = ({
 CountryCard.propTypes = {
   country: PropTypes.string.isRequired,
   flag: PropTypes.string.isRequired,
-  capital: PropTypes.arrayOf(PropTypes.node),
+  capital: PropTypes.string.isRequired,
   timeZone: PropTypes.string.isRequired,
   region: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
-};
-
-CountryCard.defaultProps = {
-  capital: [],
+  code: PropTypes.number.isRequired,
 };
 
 export default CountryCard;
