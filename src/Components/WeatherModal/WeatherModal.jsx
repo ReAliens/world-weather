@@ -8,7 +8,6 @@ import {
   Grid,
   Flex,
   Text,
-  Spinner,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
@@ -16,7 +15,7 @@ import { useSelector } from 'react-redux';
 const WeatherModal = ({ isOpen, onClose }) => {
   const { weather } = useSelector((state) => state);
   return weather?.weather?.data?.length && !weather.loading ? (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="2xl">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Weather Data</ModalHeader>
@@ -68,17 +67,7 @@ const WeatherModal = ({ isOpen, onClose }) => {
         </ModalBody>
       </ModalContent>
     </Modal>
-  ) : (
-    <Flex width="90%" height="80vh" justifyContent="center" alignItems="center">
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      />
-    </Flex>
-  );
+  ) : null;
 };
 
 WeatherModal.propTypes = {
