@@ -21,16 +21,16 @@ export const weatherCurrLocFetchError = (payload) => ({
   payload,
 });
 
-export const fetchweatherCurrLoc = () => async (dispatch) => {
+export const fetchweatherCurrLoc = ({ lon, lat }) => async (dispatch) => {
   dispatch(weatherCurrLocFetchStart());
   try {
     const response = await fetch(
-      'https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=34.2&lat=-79.8',
+      `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${lon}&lat=${lat}`,
       {
         headers: {
           'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',
           'x-rapidapi-key':
-            'b2b2137022msh46f70286914db8bp19f4a0jsnb66fe8a3c088',
+              'b2b2137022msh46f70286914db8bp19f4a0jsnb66fe8a3c088',
         },
       },
     );

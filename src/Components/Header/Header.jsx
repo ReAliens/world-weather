@@ -1,4 +1,5 @@
 import { Flex, Grid, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { AngleLeftIcon, GearIcon, MicCircleIcon } from '../../assets/Icon';
 
 const Header = () => (
@@ -13,8 +14,12 @@ const Header = () => (
     top="0"
     zIndex="3"
   >
-    <AngleLeftIcon boxSize="30px" color="white" />
-    <Text textAlign="center" color="white">World Weather</Text>
+    <Link to="/">
+      <AngleLeftIcon boxSize="30px" color="white" />
+    </Link>
+    <Text textAlign="center" color="white">
+      World Weather
+    </Text>
     <Flex alignItems="center" justifyContent="flex-end" width="100%">
       <MicCircleIcon boxSize="50px" mr={['0px', '10px', '10px', '10px']} />
       <GearIcon boxSize="30px" ml={['0px', '10px', '10px', '10px']} />

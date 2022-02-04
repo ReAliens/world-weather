@@ -1,7 +1,9 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-const StateCard = ({ stateName, latitude, longitude }) => (
+const StateCard = ({
+  stateName, latitude, longitude, onClick,
+}) => (
   <Box
     bgColor="gray.700"
     height="100%"
@@ -16,6 +18,7 @@ const StateCard = ({ stateName, latitude, longitude }) => (
     borderRadius="25px"
     justifyContent="space-between"
     color="white"
+    onClick={onClick}
   >
     <Text>{stateName}</Text>
     <Flex justifyContent="space-between">
@@ -24,14 +27,14 @@ const StateCard = ({ stateName, latitude, longitude }) => (
           ? `Latitude:   
         ${Math.round((latitude + Number.EPSILON) * 100) / 100}
          `
-          : 'Latitude: no data availabe'}
+          : 'Latitude: no data'}
       </Text>
       <Text>
         {longitude
           ? `longitude:   
         ${Math.round((longitude + Number.EPSILON) * 100) / 100}
         `
-          : 'longitude:  no data availabe'}
+          : 'longitude:  no data'}
       </Text>
     </Flex>
   </Box>
@@ -41,12 +44,14 @@ StateCard.propTypes = {
   stateName: PropTypes.string,
   latitude: PropTypes.number,
   longitude: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 StateCard.defaultProps = {
   stateName: '',
   latitude: null,
   longitude: null,
+  onClick: () => {},
 };
 
 export default StateCard;

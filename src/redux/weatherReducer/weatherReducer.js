@@ -7,7 +7,7 @@ import {
 const initState = {
   loading: false,
   error: undefined,
-  currLocation: [],
+  weather: [],
 };
 
 const reducer = (state = initState, action) => {
@@ -21,13 +21,13 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         loading: false,
-        currLocation: action.payload,
+        weather: action.payload,
       };
     case WEATHER_REQUEST_ERROR:
       return {
         ...state,
         loading: false,
-        currLocation: action.payload,
+        weather: action.payload,
       };
 
     default:
