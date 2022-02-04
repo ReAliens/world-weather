@@ -1,14 +1,10 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-} from '@chakra-ui/react';
+/* eslint-disable object-curly-newline */
+import { Divider, Flex, Grid } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import CountryDetails from '../../Components/countryDetails/CountryDetails';
+import StateCard from '../../Components/stateCard/StateCard';
 import { fetchCities } from '../../redux/citiesReducer/citiesActions';
 
 const Countrey = () => {
@@ -17,32 +13,32 @@ const Countrey = () => {
   useEffect(() => {
     dispatch(fetchCities(Number(country)));
   }, []);
+
   const { cities } = useSelector((state) => state);
-  const mohsen = cities?.cities?.data?.country?.states?.edges;
 
   return (
-    <Box width="100%" height="100vh" color="white">
-      <Accordion>
-        {mohsen?.map((state) => (
-          <AccordionItem key={state?.state_code} bgColor="gray.700">
-            <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  {state?.name}
-                </Box>
-                <AccordionIcon bgColor="blue.400" />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </AccordionPanel>
-          </AccordionItem>
+    <>
+      <Flex py="20px" width="100%" margin="auto" justifyContent="center">
+        {cities && (
+          <CountryDetails countryDetails={cities?.cities?.data?.country} />
+        )}
+      </Flex>
+      <Divider margin="auto" mt="20px" p="1px" bgColor="blue.400" />
+      <Grid
+        gridTemplateColumns="repeat(auto-fill,minmax(400px,1fr))"
+        gap={3}
+        padding="20px"
+      >
+        {cities?.cities?.data?.country?.states?.edges?.map((item) => (
+          <StateCard
+            key={item?.node?.id}
+            stateName={item?.node?.name}
+            longitude={item?.node?.longitude}
+            latitude={item?.node?.latitude}
+          />
         ))}
-      </Accordion>
-    </Box>
+      </Grid>
+    </>
   );
 };
 export default Countrey;

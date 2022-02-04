@@ -40,11 +40,13 @@ export const fetchCities = (variables) => async (dispatch) => {
             currency
             region
             subregion
+            emojiU
             currency_symbol
             states (page:{first:100}){
               edges {
                 node {
                   name
+                  id
                   latitude
                   longitude
                 }

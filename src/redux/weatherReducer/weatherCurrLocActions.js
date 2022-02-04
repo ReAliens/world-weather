@@ -25,7 +25,7 @@ export const fetchweatherCurrLoc = () => async (dispatch) => {
   dispatch(weatherCurrLocFetchStart());
   try {
     const response = await fetch(
-      'https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=38.5&lat=-78.5',
+      'https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=34.2&lat=-79.8',
       {
         headers: {
           'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',

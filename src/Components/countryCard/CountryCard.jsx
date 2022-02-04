@@ -25,7 +25,7 @@ const CountryCard = ({
         <Text as="span" fontSize="14px">
           {country}
         </Text>
-        {flag}
+        <Flex fontSize="28px">{flag}</Flex>
       </Flex>
       <Flex
         justifyContent="space-between"

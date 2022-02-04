@@ -41,6 +41,10 @@ export const fetchCountries = () => async (dispatch) => {
                 iso3
                 capital
                 region
+                emojiU
+                timezones{
+                  gmt_offset_name
+                }
                 phone_code
                 numeric_code
                 timezones {
