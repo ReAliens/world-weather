@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import persistReducer from 'redux-persist/es/persistReducer';
+import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import countreyReducer from './countriesReducer/countriesReducer';
 import citiesReducer from './citiesReducer/citiesReducer';

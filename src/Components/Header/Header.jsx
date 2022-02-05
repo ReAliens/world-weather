@@ -1,5 +1,5 @@
 import { Flex, Grid, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AngleLeftIcon, GearIcon, MicCircleIcon } from '../../assets/Icon';
 
 const Header = () => (
@@ -14,9 +14,9 @@ const Header = () => (
     top="0"
     zIndex="3"
   >
-    <Link to="/">
+    <NavLink to="/">
       <AngleLeftIcon boxSize="30px" color="white" />
-    </Link>
+    </NavLink>
     <Text textAlign="center" color="white">
       World Weather
     </Text>
