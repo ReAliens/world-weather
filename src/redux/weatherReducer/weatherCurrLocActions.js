@@ -27,10 +27,11 @@ export const fetchweatherCurrLoc = ({ lon, lat }) => async (dispatch) => {
     const response = await fetch(
       `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${lon}&lat=${lat}`,
       {
+        method: 'GET',
         headers: {
           'x-rapidapi-host': 'weatherbit-v1-mashape.p.rapidapi.com',
           'x-rapidapi-key':
-              'b2b2137022msh46f70286914db8bp19f4a0jsnb66fe8a3c088',
+              'a02eef9104msh2d026e34c541e6ep1e0813jsn56589a941779',
         },
       },
     );

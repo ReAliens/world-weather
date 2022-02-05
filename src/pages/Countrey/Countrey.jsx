@@ -14,7 +14,7 @@ import CountryDetails from '../../Components/countryDetails/CountryDetails';
 import StateCard from '../../Components/stateCard/StateCard';
 import WeatherModal from '../../Components/WeatherModal/WeatherModal';
 import { fetchCities } from '../../redux/citiesReducer/citiesActions';
-import { fetchweatherCurrLoc } from '../../redux/weatherReducer/weatherActions';
+import { fetchweatherCurrLoc } from '../../redux/weatherReducer/weatherCurrLocActions';
 
 const Countrey = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -47,13 +47,13 @@ const Countrey = () => {
                 longitude={item?.node?.longitude}
                 latitude={item?.node?.latitude}
                 onClick={() => {
+                  onOpen();
                   dispatch(
                     fetchweatherCurrLoc({
                       lon: item?.node?.longitude,
                       lat: item?.node?.latitude,
                     }),
                   );
-                  onOpen();
                 }}
               />
             ))}
