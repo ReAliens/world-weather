@@ -4,12 +4,7 @@
 > current weather information for this state .
 
 ## Video presentation
-[Space hub presentation](https://www.loom.com/share/7087961b0a5e428aae34ed628b7aeb72)
-
-## Screenshots
-![Rockets Page](./screenshots/rockets.jpeg)
-![Missions Page](./screenshots/missions.jpeg)
-![Profile Page](./screenshots/profile.jpeg)
+[World Weather presentation](https://www.loom.com/share/d188420c652e46be9b3c4a311c620060)
 
 ## Built With
 - React
@@ -26,7 +21,7 @@
 
  ## Live App
 
- - you can see our app <a href="https://space-hub-traveler.herokuapp.com/" target="_blank">here</a>
+ - you can see our app <a href="https://61fe901ced866a0008621bc9--friendly-lalande-5db46e.netlify.app/" target="_blank">here</a>
 
 ## Installation
 
