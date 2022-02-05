@@ -1,22 +1,20 @@
-import { Box } from '@chakra-ui/react';
-import { useState } from 'react';
-import WorldMap from './Components/worldMap/WorldMap';
+import { ChakraProvider } from '@chakra-ui/react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Header from './Components/Header/Header';
+import { fetchCountries } from './redux/countriesReducer/countriesActions';
+import AppRoutes from './routes/routes';
 
 function App() {
-  const [loc, setLoc] = useState('');
-  console.log(loc);
-
-  const handleLocation = (e) => {
-    setLoc(
-      e.target.getAttribute('name')
-        ? e.target.getAttribute('name')
-        : e.target.className.baseVal,
-    );
-  };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCountries());
+  }, []);
   return (
-    <Box w="100%" height="100vh" bgColor="#01171b">
-      <WorldMap onClick={handleLocation} />
-    </Box>
+    <ChakraProvider>
+      <Header />
+      <AppRoutes />
+    </ChakraProvider>
   );
 }
 
