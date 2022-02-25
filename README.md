@@ -1,70 +1,74 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# World Weather
+> A web application for displaying all world countries with some basics data for travelers and you can select a specific state on each country to display the basics 
+> current weather information for this state .
 
-## Available Scripts
+## Video presentation
+[World Weather presentation](https://www.loom.com/share/20a9ad9e9fec4fc8bf3bf0b429eed904)
 
-In the project directory, you can run:
+## Built With
+- React
+- Redux
+- Chakra
+- Tools used - Git(version control), WebHint(linting tool), Stylelint(style linting), ESLint(Javascript linting)
 
-### `yarn start`
+## Prerequisites
+ - [React](https://reactjs.org/docs/getting-started.html)
+ - [Redux](https://redux.js.org/tutorials/quick-start)
+ - [Git](https://git-scm.com/downloads)
+ - [Node](https://nodejs.org/en/download/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ## Live App
 
-### `yarn test`
+ - you can see our app <a href="https://61fe901ced866a0008621bc9--friendly-lalande-5db46e.netlify.app/" target="_blank">here</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+Go to your terminal, navigate to your working directory and run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`git clone https://github.com/ReAliens/world-weather.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After that navigate to the newly created folder
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`cd world-weather`
 
-### `yarn eject`
+You now have access to the files.
+To install necessary dependencies run
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`npm install`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start a local server running the command
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You should now have the project running locally on a dev server.
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Ahmed Reda**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- GitHub: [@ReAliens](https://github.com/ReAliens)
+- Twitter: [@AhmedRedaMoha19](https://twitter.com/AhmedRedaMoha19)
+- LinkedIn: [Ahmed-Reda](https://www.linkedin.com/in/armali/)
+- Email: ahmedreda152@gmail.com
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
+[original design idea by] Nelson Sakwa on Behance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Contributions, issues, and feature requests are welcome!
 
-### Advanced Configuration
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Show your support
 
-### Deployment
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 License
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
